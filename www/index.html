@@ -30,7 +30,17 @@
         .then(function(results) {
           showResults(results);
         })
+    }
+
+    function searchLevel() {
+      let TestDataClass = ncmb.DataStore(db);
+      let level = parseInt($("#level").val());
+      TestDataClass.equalTo("level", level).fetchAll()
+        .then(function(results) {
+          showResults(results);
+        })
     }    
+
 
     function showResults(results) {
       // テーブルのヘッダを生成
